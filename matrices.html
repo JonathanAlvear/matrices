@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Deber de Matriz</title>
+
+</head>
+<body>
+    <center>
+            <h1>Matrices</h1>
+    <div class="">
+        <span class="label label-default">Filas</span>
+        <input type="text" id="filas">
+        <br>
+        <br>
+        <span class = "label label-default">Columnas</span>
+        <input type = "text" id="columnas">
+        <button type = "button" name="button" onclick="grafica()"> Generador de  tabla </button>
+    </div>
+    <div class="" id="genera">
+    </div>
+</center>
+</body>
+
+<script>
+
+    function grafica() {
+        var generadorDeTabla = "<table><tbody>";
+        var numeroFilas = parseInt(document.getElementById("filas").value);
+        var numeroColumnas = parseInt(document.getElementById("columnas").value);
+        for (let x = 0; x < numeroFilas; x++) {
+            generadorDeTabla += "<tr>"
+            for (let i = 0; i < numeroColumnas; i++) {
+                generadorDeTabla += "<td>" + x + "," + i + "</td>"
+            }
+            generadorDeTabla += "</tr>"
+        }
+        generadorDeTabla += "</tbody></table>"
+        document.getElementById("genera").innerHTML = generadorDeTabla;
+    }
+</script>
+
+</html>
